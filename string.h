@@ -32,16 +32,15 @@ class string{
 //setters
   inline void reserve (size_t cap);
 
+//methodes
+  void clear (void);
+  void resize(size_t n,char c);
+  void resize(size_t n);
+  bool empty(void) const;
 };
 
 inline char* string::c_str() const {
 	return chaine;
 }
-
-//methodes
-  void clear (void);
-  void resize(size_t n,char c);
-  void resize(size_t n);
-
   
 #endif //STRING_H__
