@@ -38,4 +38,8 @@ inline char* string::c_str() const {
 	return chaine;
 }
 
+//methodes
+  void clear (void);
+
+  
 #endif //STRING_H__

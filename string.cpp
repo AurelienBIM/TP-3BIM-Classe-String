@@ -73,3 +73,9 @@ string::~string(){
 	delete [] chaine;
 }
 
+//methodes
+
+void string::clear (void){
+	chaine[0] = '\0';
+	size_ = 0;
+}
