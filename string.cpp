@@ -145,3 +145,42 @@ string& string::operator= (const string& s){
 	}
 	return *this;
 }
+
+string& string::operator= (const char* s){
+	
+  if(chaine != nullptr){
+    delete [] chaine;
+  }
+  size_ = string(s).length();
+  if(size_ > 0){
+    chaine = new char [size_ + 1];
+    for (size_t i = 0 ; i<=size_+1 ; i++){
+      chaine[i] = s[i];
+    }
+  }
+  else{
+    chaine = nullptr;
+  }
+  return *this;
+}
+
+string operator+ (const string& s1, const string& s2){
+	unsigned int l1 = s1.size();
+	unsigned int l2 = s2.size();
+	unsigned int l = l1 + l2;
+	if (l > s1.MAX_SIZE){
+		l = s1.MAX_SIZE;
+    	std::cout << "Erreur : Chaine trop longue"  << std::endl;
+	}
+	char* somme = new char[l+1];
+	char* chaine1 = s1.c_str();
+	char* chaine2 = s2.c_str();
+	for (unsigned int i = 0 ; i<l1 ; i++){
+		somme[i] = chaine1[i];
+	}
+	for (unsigned int i = l1 ; i<l ; i++){
+		somme[i] = chaine2[i-l1];
+	}
+	somme[l] = '\0';
+	return string(somme);
+}

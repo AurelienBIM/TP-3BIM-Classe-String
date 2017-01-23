@@ -11,7 +11,7 @@ class string{
   size_t capacity_;
   size_t size_;
   char* chaine;
-  static const size_t MAX_SIZE = 100;
+  static const size_t MAX_SIZE = 500;
 
 	public :
 //constructeurs
@@ -40,7 +40,11 @@ class string{
 
 //Operations
 	string& operator= (char c);
-	string& operator= (const string& s);  
+	string& operator= (const string& s);
+	string& operator= (const char* s);
+	friend string operator+ (const string& s1, const string& s2);
+  	friend string operator+ (const string&& s1, const char* c);
+  	friend string operator+ (const string& s1, char c); 
 };
 
 inline char* string::c_str() const {
