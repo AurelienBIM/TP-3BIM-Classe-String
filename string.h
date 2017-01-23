@@ -40,6 +40,8 @@ inline char* string::c_str() const {
 
 //methodes
   void clear (void);
+  void resize(size_t n,char c);
+  void resize(size_t n);
 
   
 #endif //STRING_H__

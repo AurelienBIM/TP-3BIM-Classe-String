@@ -79,3 +79,32 @@ void string::clear (void){
 	chaine[0] = '\0';
 	size_ = 0;
 }
+
+void string::resize (size_t n, char c){
+  if(n > MAX_SIZE){
+    n = MAX_SIZE;
+    std::cout << "Erreur : Chaine trop longue"  << std::endl;
+  }
+  if(n > size_){
+    char* tmp = new char[n+1];
+    for(unsigned int i = 0 ; i < size_ ; i++){
+      tmp[i] = chaine[i];
+    }
+    delete[] chaine;
+    for(unsigned int i = size_ ; i < n ; i++){
+      tmp[i] = c;
+    }
+    tmp[n] = '\0';
+    size_ = n;
+    capacity_ = n;
+    chaine = tmp;    
+  }
+  else{
+    chaine[n] = '\0';
+    size_ = n;
+  }
+}
+
+void string::resize (size_t n){
+  resize(n,'\0');
+}
