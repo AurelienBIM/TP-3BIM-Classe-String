@@ -18,6 +18,17 @@ inline size_t string::max_size() const{
   return MAX_SIZE;
 }
 
+//setters
+
+inline void string::reserve(size_t cap){
+  if(cap>MAX_SIZE){ 
+    capacity_ = MAX_SIZE;
+  }
+  else if(cap>capacity_){ 
+    capacity_ = cap;
+  }
+}
+
 // Constructeurs
 
 string::string (){
@@ -55,3 +66,10 @@ string::string (const char* ch){
   }
   chaine[longueur] = '\0';
 }
+
+//destructeur
+
+string::~string(){
+	delete [] chaine;
+}
+
