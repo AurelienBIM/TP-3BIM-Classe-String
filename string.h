@@ -43,7 +43,6 @@ class string{
 	string& operator= (const string& s);
 	string& operator= (const char* s);
 	friend string operator+ (const string& s1, const string& s2);
-  	friend string operator+ (const string&& s1, const char* c);
   	friend string operator+ (const string& s1, char c); 
 };
 

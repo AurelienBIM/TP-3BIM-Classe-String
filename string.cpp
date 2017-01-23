@@ -184,3 +184,21 @@ string operator+ (const string& s1, const string& s2){
 	somme[l] = '\0';
 	return string(somme);
 }
+
+
+string operator+ (const string& s1, char c){
+  char* chaine1 = s1.c_str();
+  unsigned int l1 = s1.size();
+  unsigned int l = l1 + 1;
+  if (l > s1.MAX_SIZE){
+    l = s1.MAX_SIZE;
+    std::cout << "Erreur : Chaine trop longue"  << std::endl;
+  }
+  char* somme = new char[l+1];
+  for (unsigned int i =0; i<l1; i++){
+    somme[i]=chaine1[i];
+  }
+  somme[l1]=c;
+  somme[l] = '\0';
+  return string(somme);
+}
