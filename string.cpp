@@ -1,34 +1,5 @@
 #include "string.h"
 
-//getters
-
-inline size_t string::size() const {
-	return size_;
-}
-
-inline size_t string::length() const{
-  return size_;  
-}
-
-inline size_t string::capacity() const {
-	return capacity_;
-}
-
-inline size_t string::max_size() const{
-  return MAX_SIZE;
-}
-
-//setters
-
-inline void string::reserve(size_t cap){
-  if(cap>MAX_SIZE){ 
-    capacity_ = MAX_SIZE;
-  }
-  else if(cap>capacity_){ 
-    capacity_ = cap;
-  }
-}
-
 // Constructeurs
 
 string::string (){
@@ -201,4 +172,8 @@ string operator+ (const string& s1, char c){
   somme[l1]=c;
   somme[l] = '\0';
   return string(somme);
+}
+
+string operator+ (const string& s1, const char* c){
+  return s1 + string(c);
 }
