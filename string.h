@@ -31,6 +31,11 @@ class string{
 
 //setters
   inline void reserve (size_t cap);
+
 };
+
+inline char* string::c_str() const {
+	return chaine;
+}
 
 #endif //STRING_H__
