@@ -119,3 +119,17 @@ bool string::empty(void) const{
 	}
 	return tmp;
 }
+
+//Operations
+ 
+string& string::operator= (const string& s){
+	size_ = s.size();
+	capacity_ = s.capacity();
+	delete [] chaine;
+	chaine = new char[capacity_+1];
+	char* tmp = s.c_str();
+	for (unsigned int i= 0 ; i<size_+1 ; i++){
+		chaine[i] = tmp[i];
+	}
+	return *this;
+}

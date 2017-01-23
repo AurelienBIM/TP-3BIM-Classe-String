@@ -37,6 +37,9 @@ class string{
   void resize(size_t n,char c);
   void resize(size_t n);
   bool empty(void) const;
+
+//Operations
+	string& operator= (const string& s);  
 };
 
 inline char* string::c_str() const {
