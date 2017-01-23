@@ -122,6 +122,18 @@ bool string::empty(void) const{
 
 //Operations
  
+string& string::operator= (char c){
+  if(capacity_ < 1){
+    delete[] chaine;
+    chaine = new char[2];
+    capacity_ = 1;
+    size_ = 1;
+  }
+  chaine[0] = c;
+  chaine[1] = '\0';
+  return *this;
+} 
+ 
 string& string::operator= (const string& s){
 	size_ = s.size();
 	capacity_ = s.capacity();

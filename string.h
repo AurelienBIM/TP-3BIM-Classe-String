@@ -39,6 +39,7 @@ class string{
   bool empty(void) const;
 
 //Operations
+	string& operator= (char c);
 	string& operator= (const string& s);  
 };
 
