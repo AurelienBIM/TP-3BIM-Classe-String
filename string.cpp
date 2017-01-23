@@ -108,3 +108,14 @@ void string::resize (size_t n, char c){
 void string::resize (size_t n){
   resize(n,'\0');
 }
+
+bool string::empty(void) const{
+	bool tmp;
+	if (size()==0){
+	  tmp=true;
+	}
+	else { 
+		tmp=false; 
+	}
+	return tmp;
+}
